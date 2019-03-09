@@ -113,6 +113,27 @@ function arrayLength(arr){
  */
 var countAll;
 
+//Using for loop - THIS WORKS
+// function countAll(arr){
+//   var arrCount = 0;
+  
+//    for(var i=0; i<arr.length; i++){
+//     arrCount+=arr[i]; 
+//    }
+//   return arrCount;
+// }
+
+//Using forEach - THIS ALSO WORKS
+function countAll(arr){
+  var arrCount = 0;
+  
+  arr.forEach(function(elem){
+    arrCount+=elem;
+  })
+  return arrCount;
+}
+
+
 /* #countStrings
  *
  * Takes in an array of strings and returns an array of string lengths.
@@ -437,7 +458,7 @@ module.exports = {
   sumArrays: sumArrays,
   stringCount: stringCount,
   arrayLength: arrayLength,
-  countAll: null,
+  countAll: countAll,
   countStrings: null,
   countAllStrings: null,
   convertToArray: null,
