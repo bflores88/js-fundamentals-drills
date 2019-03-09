@@ -43,8 +43,6 @@ function doubleArray(arr){
   
 }
 
-
-
 /* #sumArrays
  *
  * Takes in two arrays of numbers and returns the sum of both arrays.
@@ -54,6 +52,31 @@ function doubleArray(arr){
  * @return {Number}
  */
 var sumArrays;
+
+//Using concat and for loop - THIS WORKS
+// function sumArrays(arr1, arr2){
+//   var sumArrs = 0;
+//   var concatArr = arr2.concat(arr1);
+  
+//   for(var i=0; i<concatArr.length; i++){
+//     sumArrs+=concatArr[i];
+//   }
+//   return sumArrs;
+// }
+
+//Using forEach and for loop - THIS ALSO WORKS
+function sumArrays(arr1, arr2){
+  var sumArrs = 0;
+  
+  arr1.forEach(function(elem){
+    arr2.push(elem);
+  })
+  
+  for(let i=0; i<arr2.length; i++){
+    sumArrs+=arr2[i];
+  }
+  return sumArrs;
+}
 
 /* #stringCount
  *
@@ -403,7 +426,7 @@ var tupleConvertToObject;
 
 module.exports = {
   doubleArray: doubleArray,
-  sumArrays: null,
+  sumArrays: sumArrays,
   stringCount: null,
   arrayLength: null,
   countAll: null,
