@@ -100,6 +100,10 @@ function stringCount(str){
  */
 var arrayLength;
 
+function arrayLength(arr){
+  return arr.length;
+}
+
 /* #countAll
  *
  * Takes in an array and returns the sum of all numbers in the array.
@@ -432,7 +436,7 @@ module.exports = {
   doubleArray: doubleArray,
   sumArrays: sumArrays,
   stringCount: stringCount,
-  arrayLength: null,
+  arrayLength: arrayLength,
   countAll: null,
   countStrings: null,
   countAllStrings: null,
