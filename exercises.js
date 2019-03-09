@@ -7,6 +7,44 @@
  */
 var doubleArray;
 
+//Using for loop - THIS WORKS
+// function doubleArray(arr){
+//   var doubleArr = [];
+  
+//   for(let i = 0; i<arr.length; i++){
+//     doubleArr.push(arr[i]*2);
+//   }
+  
+//   return doubleArr;
+// }
+
+//Using for in loop - THIS ALSO WORKS
+// function doubleArray(arr){
+//   var doubleArr = [];
+  
+//   for(var i in arr){
+//     doubleArr.push(arr[i]*2);
+//   }
+  
+//   return doubleArr;
+// }
+
+//Using forEach method - THIS WORKS, TOO
+function doubleArray(arr){
+  var doubleArr = [];
+  
+  function double(elem){
+    doubleArr.push(elem*2);
+  }
+  
+  arr.forEach(double);
+  
+  return doubleArr;
+  
+}
+
+
+
 /* #sumArrays
  *
  * Takes in two arrays of numbers and returns the sum of both arrays.
@@ -364,7 +402,7 @@ var tupleConvertToObject;
 
 
 module.exports = {
-  doubleArray: null,
+  doubleArray: doubleArray,
   sumArrays: null,
   stringCount: null,
   arrayLength: null,
