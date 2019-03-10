@@ -296,6 +296,10 @@ function splitString(str){
  */
 var lengthOfLast;
 
+function lengthOfLast(arr){
+  return arr.pop().length;
+}
+
 /* #sumBelowTen
  *
  * Takes in an array of numbers and returns the sum of all numbers below 10.
@@ -556,7 +560,7 @@ module.exports = {
   createZeroFilledArray: createZeroFilledArray,
   poppedArray: poppedArray,
   splitString: splitString,
-  lengthOfLast: null,
+  lengthOfLast: lengthOfLast,
   sumBelowTen: null,
   moreThanTenLetters: null,
   multiplyAll: null,
