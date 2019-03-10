@@ -172,6 +172,26 @@ function countStrings(arr){
  */
 var countAllStrings;
 
+//Using for loop - THIS WORKS
+// function countAllStrings(arr){
+//   var sumLengths = 0;
+  
+//   for(var i=0; i<arr.length; i++){
+//     sumLengths+=arr[i].length;
+//   }
+//   return sumLengths;
+// }
+
+//Using forEach method - THIS ALSO WORKS
+function countAllStrings(arr){
+  var sumLengths = 0;
+  
+  arr.forEach(function(elem){
+    sumLengths+=elem.length;
+  })
+  return sumLengths;
+}
+
 /* #convertToArray
  *
  * Takes in an object and returns all the values of the object in an array.
@@ -480,7 +500,7 @@ module.exports = {
   arrayLength: arrayLength,
   countAll: countAll,
   countStrings: countStrings,
-  countAllStrings: null,
+  countAllStrings: countAllStrings,
   convertToArray: null,
   objectSize: null,
   createZeroFilledArray: null,
