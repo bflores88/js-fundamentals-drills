@@ -204,11 +204,7 @@ var convertToArray;
 //Using for in loop and for loop - THIS WORKS
 // function convertToArray(obj){
 //   var propArr = [];
-//   var objSize = 0;
-  
-//   for(var key in obj){
-//     objSize++;
-//   }
+//   var objSize = Object.keys(obj).length;
   
 //   for(var i=0; i<objSize; i++){
 //     propArr.push(Object.values(obj)[i]);
@@ -309,6 +305,29 @@ function lengthOfLast(arr){
  */
 var sumBelowTen;
 
+//Using for loop - THIS WORKS
+// function sumBelowTen(arr){
+//   var ttl = 0;
+//   for (var i=0; i<arr.length; i++){
+//     if(arr[i] < 10){
+//       ttl+= arr[i];
+//     }
+//   }
+//   return ttl;
+// }
+
+//Using forEach - THIS ALSO WORKS
+function sumBelowTen(arr){
+  var ttl = 0;
+  arr.forEach(function(elem){
+    if(elem < 10){
+      ttl+=elem;
+    }
+  })
+  return ttl;
+}
+
+
 /* #moreThanTenLetters
  *
  * Takes in an array of strings and returns the amount of elements that have more than ten letters.
@@ -317,6 +336,28 @@ var sumBelowTen;
  * @return {Number}
  */
 var moreThanTenLetters;
+
+//Using for loop - THIS WORKS
+// function moreThanTenLetters(arr){
+//   var sumOverTen = 0;
+//   for (var i=0; i<arr.length; i++){
+//     if(arr[i].length > 10){
+//     sumOverTen += 1;
+//     }
+//   }
+//   return sumOverTen;
+// }
+
+//Using forEach method
+function moreThanTenLetters(arr){
+  var sumOverTen = 0;
+  for(var elem in arr){
+    if(arr[elem].length > 10){
+      sumOverTen+=1;
+    }
+  }
+  return sumOverTen;
+}
 
 /* #multiplyAll
  *
@@ -561,8 +602,8 @@ module.exports = {
   poppedArray: poppedArray,
   splitString: splitString,
   lengthOfLast: lengthOfLast,
-  sumBelowTen: null,
-  moreThanTenLetters: null,
+  sumBelowTen: sumBelowTen,
+  moreThanTenLetters: moreThanTenLetters,
   multiplyAll: null,
   sumAllPositive: null,
   stringCountBelowThree: null,
