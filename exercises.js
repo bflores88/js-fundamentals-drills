@@ -265,6 +265,15 @@ function createZeroFilledArray(num){
  */
 var poppedArray;
 
+function poppedArray(arr){
+  var arrLength = arr.length;
+  var newArrLength = arrLength-1;
+  
+  arr.splice(newArrLength);
+  
+  return arr;
+}
+
 /* #splitString
  *
  * Takes in a string and returns an array of each individual character in the string.
@@ -541,7 +550,7 @@ module.exports = {
   convertToArray: convertToArray,
   objectSize: objectSize,
   createZeroFilledArray: createZeroFilledArray,
-  poppedArray: null,
+  poppedArray: poppedArray,
   splitString: null,
   lengthOfLast: null,
   sumBelowTen: null,
