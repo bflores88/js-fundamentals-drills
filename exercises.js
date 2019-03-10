@@ -230,6 +230,15 @@ function convertToArray(obj){
  */
 var objectSize;
 
+function objectSize(obj){
+  var objSize = 0;
+  for(var key in obj){
+    objSize++;
+  }
+  return objSize;
+}
+
+
 /* #createZeroFilledArray
  *
  * Takes in a number and fills an array with that number of zeroes.
@@ -522,7 +531,7 @@ module.exports = {
   countStrings: countStrings,
   countAllStrings: countAllStrings,
   convertToArray: convertToArray,
-  objectSize: null,
+  objectSize: objectSize,
   createZeroFilledArray: null,
   poppedArray: null,
   splitString: null,
