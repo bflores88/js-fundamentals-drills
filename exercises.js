@@ -201,29 +201,17 @@ function countAllStrings(arr){
  */
 var convertToArray;
 
-//Using for loop - THIS WORKS
+//Using for in loop - THIS WORKS
 // function convertToArray(obj){
 //   var propArr = [];
-//   var objSize = Object.keys(obj).length;
-  
-//   for(var i=0; i<objSize; i++){
-//     propArr.push(Object.values(obj)[i]);
-//   }
-//   return propArr;
-// }
-
-//Using for in loop - THIS TOO WORKS
-// function convertToArray(obj){
-//   var propArr = [];
-  
-//     for (var key in obj) {
+//   for (var key in obj) {
 //     if (obj.hasOwnProperty(key)) {
 //       var value = obj[key];
 //       propArr.push(value);
 //     }
 //   }
 //   return propArr;
-}
+
 
 //Using object values method - THIS ALSO WORKS
 function convertToArray(obj){
@@ -380,6 +368,39 @@ function moreThanTenLetters(arr){
  * @return {Number}
  */
 var multiplyAll;
+
+
+//Using for loop - THIS DEFINITELY WORKS
+// function multiplyAll(arr){
+//   var productArr = 1;
+//   for (var i=0; i<arr.length; i++){
+//     productArr*=arr[i];
+//     }
+//   return productArr;
+// }
+
+//Using for in loop - THIS WORKS
+// function multiplyAll(arr){
+//   var productArr = 1;
+//   for (var i in arr){
+//     if(typeof arr[i] !== 'number'){
+//       return null;
+//     }
+//     productArr *= arr[i];
+//   }
+//   return productArr;
+// }
+
+//Using forEach method - THIS ALSO WORKS
+function multiplyAll(arr){
+  var productArr = 1;
+  arr.forEach(function(num){
+    if(typeof num === 'number'){
+      productArr*=num;
+    }
+  })
+  return productArr;
+}
 
 /* #sumAllPositive
  *
@@ -617,7 +638,7 @@ module.exports = {
   lengthOfLast: lengthOfLast,
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
-  multiplyAll: null,
+  multiplyAll: multiplyAll,
   sumAllPositive: null,
   stringCountBelowThree: null,
   countObjects: null,
