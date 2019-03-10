@@ -201,6 +201,26 @@ function countAllStrings(arr){
  */
 var convertToArray;
 
+//Using for in loop and for loop - THIS WORKS
+// function convertToArray(obj){
+//   var propArr = [];
+//   var objSize = 0;
+  
+//   for(var key in obj){
+//     objSize++;
+//   }
+  
+//   for(var i=0; i<objSize; i++){
+//     propArr.push(Object.values(obj)[i]);
+//   }
+//   return propArr;
+// }
+
+//Using object values method - THIS ALSO WORKS
+function convertToArray(obj){
+  return Object.values(obj);
+}
+
 /* #objectSize
  *
  * Takes in an object and returns the number of key value pairs in the object.
@@ -501,7 +521,7 @@ module.exports = {
   countAll: countAll,
   countStrings: countStrings,
   countAllStrings: countAllStrings,
-  convertToArray: null,
+  convertToArray: convertToArray,
   objectSize: null,
   createZeroFilledArray: null,
   poppedArray: null,
