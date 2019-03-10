@@ -201,7 +201,7 @@ function countAllStrings(arr){
  */
 var convertToArray;
 
-//Using for in loop and for loop - THIS WORKS
+//Using for loop - THIS WORKS
 // function convertToArray(obj){
 //   var propArr = [];
 //   var objSize = Object.keys(obj).length;
@@ -211,6 +211,19 @@ var convertToArray;
 //   }
 //   return propArr;
 // }
+
+//Using for in loop - THIS TOO WORKS
+// function convertToArray(obj){
+//   var propArr = [];
+  
+//     for (var key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//       var value = obj[key];
+//       propArr.push(value);
+//     }
+//   }
+//   return propArr;
+}
 
 //Using object values method - THIS ALSO WORKS
 function convertToArray(obj){
@@ -348,7 +361,7 @@ var moreThanTenLetters;
 //   return sumOverTen;
 // }
 
-//Using forEach method
+//Using forEach method - THIS ALSO WORKS
 function moreThanTenLetters(arr){
   var sumOverTen = 0;
   for(var elem in arr){
