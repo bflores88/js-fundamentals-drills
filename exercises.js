@@ -474,7 +474,7 @@ var getObjectKeys;
 //   return objKeys;
 // }
 
-//Using for in loop
+//Using for in loop - THIS ALSO WORKS
 function getObjectKeys(obj){
   var objKeys = [];
   for(var key in obj ){
@@ -485,7 +485,6 @@ function getObjectKeys(obj){
   return objKeys;
 }
 
-
 /* #getObjectValues
  *
  * Takes in an object and returns an array of all the object's values.
@@ -494,6 +493,23 @@ function getObjectKeys(obj){
  * @return {Array}
  */
 var getObjectValues;
+
+//Using values method - THIS WORKS
+// function getObjectValues(obj){
+//   var objValues = Object.values(obj);
+//   return objValues;
+// }
+
+//Using for in loop - THIS ALSO WORKS
+function getObjectValues(obj){
+  var objValues = [];
+  for (var key in obj){
+    if(obj.hasOwnProperty(key)){ //check if property values exists
+      objValues.push(obj[key]);
+    }
+  }
+  return objValues;
+}
 
 /* #makeObject
  *
@@ -691,7 +707,7 @@ module.exports = {
   stringCountBelowThree: stringCountBelowThree,
   countObjects: countObjects,
   getObjectKeys: getObjectKeys,
-  getObjectValues: null,
+  getObjectValues: getObjectValues,
   makeObject: null,
   makeObjectReverse: null,
   tupleToObject: null,
