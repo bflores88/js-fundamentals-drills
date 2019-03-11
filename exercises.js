@@ -521,6 +521,12 @@ function getObjectValues(obj){
  */
 var makeObject;
 
+function makeObject(str1, str2){
+  var newObj = {};
+  newObj[str1] = str2;
+  return newObj;
+}
+
 /* #makeObjectReverse
  *
  * Takes in two arguments 'value' and 'key' and returns a single key-value pair in an object.
@@ -708,7 +714,7 @@ module.exports = {
   countObjects: countObjects,
   getObjectKeys: getObjectKeys,
   getObjectValues: getObjectValues,
-  makeObject: null,
+  makeObject: makeObject,
   makeObjectReverse: null,
   tupleToObject: null,
   tupleToObjectReverse: null,
