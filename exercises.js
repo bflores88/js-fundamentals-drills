@@ -411,6 +411,16 @@ function multiplyAll(arr){
  */
 var sumAllPositive;
 
+function sumAllPositive(arr){
+  var sumPos = 0;
+  for (var i=0; i<arr.length; i++){
+    if(arr[i]>0){
+      sumPos+=arr[i];
+    }
+  }
+  return sumPos;
+}
+
 /* #stringCountBelowThree
  *
  * Takes in an array of strings and returns the amount of strings that have three characters or less.
@@ -419,6 +429,16 @@ var sumAllPositive;
  * @return {Number}
  */
 var stringCountBelowThree;
+
+function stringCountBelowThree(arr){
+  var threeChar = 0;
+  for(var i=0; i<arr.length; i++){
+    if(arr[i].length <= 3){
+      threeChar++;
+    }
+  }
+  return threeChar;
+}
 
 /* #countObjects
  *
@@ -639,8 +659,8 @@ module.exports = {
   sumBelowTen: sumBelowTen,
   moreThanTenLetters: moreThanTenLetters,
   multiplyAll: multiplyAll,
-  sumAllPositive: null,
-  stringCountBelowThree: null,
+  sumAllPositive: sumAllPositive,
+  stringCountBelowThree: stringCountBelowThree,
   countObjects: null,
   getObjectKeys: null,
   getObjectValues: null,
