@@ -556,9 +556,9 @@ function tupleToObject(arr){
   var newObj = {};
   for(var i=0; i<arr.length; i++){
     if(i%2 === 0){
-      newObj[arr[i]] = arr[i+1]
+      newObj[arr[i]] = arr[i+1];
     }
-    return newObj
+    return newObj;
   }
 }
 
@@ -570,6 +570,16 @@ function tupleToObject(arr){
  * @return {Object}
  */
 var tupleToObjectReverse;
+
+function tupleToObjectReverse(arr){
+  var newObj = {};
+  for(var i=0; i<arr.length; i++){
+    if(i%2 === 1){
+      newObj[arr[i]] = arr[i-1];
+    }
+  }
+  return newObj;
+}
 
 /* #strToKeys
  *
@@ -733,7 +743,7 @@ module.exports = {
   makeObject: makeObject,
   makeObjectReverse: makeObjectReverse,
   tupleToObject: tupleToObject,
-  tupleToObjectReverse: null,
+  tupleToObjectReverse: tupleToObjectReverse,
   strToKeys: null,
   getValues: null,
   getKeys: null,
