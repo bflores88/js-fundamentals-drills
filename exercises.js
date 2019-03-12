@@ -749,7 +749,6 @@ function mapStringCounts(arr){
   return newObj;
 }
 
-
 /* #arrayToObjectNums
  *
  * takes in an array of numbers and returns an object with keys set to 
@@ -759,6 +758,14 @@ function mapStringCounts(arr){
  * @return {Object}
  */
 var arrayToObjectNums;
+
+function arrayToObjectNums(arr){
+  var newObj = {};
+  for(var i = 0; i<arr.length; i++){
+    newObj[arr[i]] = true;
+  }
+  return newObj;
+}
 
 /* #stringToKeys
  *
@@ -834,7 +841,7 @@ module.exports = {
   objectsToTuples: objectsToTuples,
   mapArrayValues: mapArrayValues,
   mapStringCounts: mapStringCounts,
-  arrayToObjectNums: null,
+  arrayToObjectNums: arrayToObjectNums,
   stringToKeys: null,
   charCountMap: null,
   frequencyMap: null,
