@@ -811,6 +811,14 @@ function charCountMap(arr){
  */
 var frequencyMap;
 
+// function frequencyMap(arr){
+//   var newObj = {};
+//   arr.sort();
+//   arr.forEach(function(elem){
+//     b
+//   })
+// }
+
 /* #tupleConvertToObject
  *
  * takes in an array of tuples and and returns an object whos keys are 
@@ -820,6 +828,18 @@ var frequencyMap;
  * @return {Object}
  */
 var tupleConvertToObject;
+
+function tupleConvertToObject(arr){
+  var newObj = {};
+  for(var i=0; i<arr.length; i++){
+    for(var a=0; a<arr[i].length; a++){
+      if(a%2 === 0){
+        newObj[arr[i][a]] = arr[i][a+1];
+      }
+    }
+  }
+  return newObj;
+}
 
 
 module.exports = {
@@ -861,5 +881,5 @@ module.exports = {
   stringToKeys: stringToKeys,
   charCountMap: charCountMap,
   frequencyMap: null,
-  tupleConvertToObject: null
+  tupleConvertToObject: tupleConvertToObject
 }
