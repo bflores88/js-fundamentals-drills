@@ -694,6 +694,21 @@ function arraysToObject(arr1, arr2){
  */
 var objectsToTuples;
 
+function objectsToTuples(obj1, obj2){
+  var tupleArr = [];
+  Object.assign(obj1, obj2);
+
+  for(var key in obj1){
+    if(obj1.hasOwnProperty(key)){
+      var newArr1 = [];
+      newArr1.push(key);
+      newArr1.push(obj1[key]);
+      tupleArr.push(newArr1);
+    }
+  }
+  return tupleArr;
+}
+
 /* #mapArrayValues
  *
  * takes in an array of strings and returns an object with keys of the array elements and values all set to True.
@@ -795,7 +810,7 @@ module.exports = {
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
   arraysToObject: arraysToObject,
-  objectsToTuples: null,
+  objectsToTuples: objectsToTuples,
   mapArrayValues: null,
   mapStringCounts: null,
   arrayToObjectNums: null,
