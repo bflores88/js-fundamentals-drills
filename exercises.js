@@ -776,6 +776,14 @@ function arrayToObjectNums(arr){
  */
 var stringToKeys;
 
+function stringToKeys(str){
+  var newObj = {};
+  for(var i=0; i<str.length; i++){
+    newObj[str[i]] = true;
+  }
+  return newObj;
+}
+
 /* #charCountMap
  *
  * takes in an array of strings and returns an object with keys set to each element of the array 
@@ -842,7 +850,7 @@ module.exports = {
   mapArrayValues: mapArrayValues,
   mapStringCounts: mapStringCounts,
   arrayToObjectNums: arrayToObjectNums,
-  stringToKeys: null,
+  stringToKeys: stringToKeys,
   charCountMap: null,
   frequencyMap: null,
   tupleConvertToObject: null
