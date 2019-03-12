@@ -607,6 +607,10 @@ function strToKeys(arr){
  */
 var getValues;
 
+function getValues(obj){
+  return Object.values(obj);
+}
+
 /* #getKeys
  *
  * Takes in an object and returns an array of the object's keys.
@@ -753,7 +757,7 @@ module.exports = {
   tupleToObject: tupleToObject,
   tupleToObjectReverse: tupleToObjectReverse,
   strToKeys: strToKeys,
-  getValues: null,
+  getValues: getValues,
   getKeys: null,
   objectToArray: null,
   arrayToObject: null,
