@@ -620,6 +620,10 @@ function getValues(obj){
  */
 var getKeys;
 
+function getKeys(obj){
+  return Object.keys(obj);
+}
+
 /* #objectToArray
  *
  * Takes in an object and returns an array of tuples where each tuple has 
@@ -758,7 +762,7 @@ module.exports = {
   tupleToObjectReverse: tupleToObjectReverse,
   strToKeys: strToKeys,
   getValues: getValues,
-  getKeys: null,
+  getKeys: getKeys,
   objectToArray: null,
   arrayToObject: null,
   arraysToObject: null,
