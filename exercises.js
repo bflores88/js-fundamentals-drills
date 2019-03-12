@@ -657,6 +657,14 @@ function objectToArray(obj){
  */
 var arrayToObject;
 
+function arrayToObject(arr){
+  var newObj = {};
+  for(var i=0; i<arr.length; i++){
+    newObj[arr[i]] = false;
+  }
+  return newObj;
+}
+
 /* #arraysToObject
  *
  * takes in two arrays, the first array elements will be keys of an object and second array elements 
@@ -777,7 +785,7 @@ module.exports = {
   getValues: getValues,
   getKeys: getKeys,
   objectToArray: objectToArray,
-  arrayToObject: null,
+  arrayToObject: arrayToObject,
   arraysToObject: null,
   objectsToTuples: null,
   mapArrayValues: null,
