@@ -676,6 +676,14 @@ function arrayToObject(arr){
  */
 var arraysToObject;
 
+function arraysToObject(arr1, arr2){
+  var newObj = {};
+  for(var i=0; i<arr1.length; i++){
+    newObj[arr1[i]] = arr2[i];
+    }
+  return newObj;
+}
+
 /* #objectsToTuples
  *
  * takes in two objects and returns an array of tuples of the key value pairs of all objects in both arrays.
@@ -786,7 +794,7 @@ module.exports = {
   getKeys: getKeys,
   objectToArray: objectToArray,
   arrayToObject: arrayToObject,
-  arraysToObject: null,
+  arraysToObject: arraysToObject,
   objectsToTuples: null,
   mapArrayValues: null,
   mapStringCounts: null,
