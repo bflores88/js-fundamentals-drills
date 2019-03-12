@@ -634,6 +634,19 @@ function getKeys(obj){
  */
 var objectToArray;
 
+function objectToArray(obj){
+  var objArr = [];
+  for(var key in obj){
+    if(obj.hasOwnProperty(key)){
+      var anArr = [];
+      anArr.push(key);
+      anArr.push(obj[key]);
+      objArr.push(anArr);
+    }
+  }
+  return objArr;
+}
+
 /* #arrayToObject
  *
  * takes in an array and returns an object with keys set to the elements in the array and
@@ -763,7 +776,7 @@ module.exports = {
   strToKeys: strToKeys,
   getValues: getValues,
   getKeys: getKeys,
-  objectToArray: null,
+  objectToArray: objectToArray,
   arrayToObject: null,
   arraysToObject: null,
   objectsToTuples: null,
